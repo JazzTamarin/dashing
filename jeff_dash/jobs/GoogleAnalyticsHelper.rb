@@ -5,10 +5,12 @@ class GoogleAnalyticsHelper
 	def initialize
 		@today = Time.now
 		@current_start_day = @today - MONTH
-		@previous_start_day = @current_start_day - MONTH		
+		@previous_start_day = @current_start_day - MONTH
+		@sources = ['Yahoo', 'Google', 'Blog Traffic', 'Direct Traffic', 'Other'] 
+		@source_counts = Hash.new({ value: 0 })
 	end
-attr_reader :today, :current_start_day, :previous_start_day, :current_web_visits, :previous_web_visits
 
+attr_reader :today, :current_start_day, :previous_start_day, :source_counts
 	@@instance = GoogleAnalyticsHelper.new
 
 	def self.instance
@@ -23,6 +25,14 @@ attr_reader :today, :current_start_day, :previous_start_day, :current_web_visits
 
 	def get_web_visits(start, finish)
 		5000 + rand(500)
+	end
+
+	def get_app_visits(start, finish)
+		5000 + rand(500)
+	end
+
+	def update_sources
+	  @sources.each { |s| @source_counts[s] = { label: s, value: rand(100) } }   
 	end
 
 	 private_class_method :new

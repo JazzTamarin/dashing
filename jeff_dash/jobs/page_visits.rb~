@@ -1,6 +1,6 @@
 require_relative './GoogleAnalyticsHelper'
 
-$refG = GoogleAnalyticsHelper.instance
+$g = GoogleAnalyticsHelper.instance
 $current_visits = $g.get_web_visits($g.current_start_day, $g.today)
 $previous_visits = $g.get_web_visits($g.previous_start_day, $g.current_start_day)
 
@@ -23,9 +23,9 @@ SCHEDULER.every '4s' do
   temp = Time.now
   if temp.day != $g.today.day
     $g.update_times
-    push_titles
   end
   # get latest from analytics
+  push_titles
   update_web_visits
   # push to widget
   send_event('page_visits', { current: $current_visits, last: $previous_visits })
