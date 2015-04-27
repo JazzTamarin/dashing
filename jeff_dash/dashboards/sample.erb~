@@ -3,11 +3,11 @@
   <ul>
 
 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="current_site_visit" data-view="Number" data-min="0" title:"Current 30"></div>
+      <div data-id="current_site_visit" data-view="Number" data-min="0" data-title:"Current 30"></div>
     </li>
 
 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="previous_site_visit" data-view="Number" data-min="0" title: "Previous 30"></div>
+      <div data-id="previous_site_visit" data-view="Number" data-min="0" data-title: "Previous 30"></div>
     </li>
 
 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -16,6 +16,10 @@
 
 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="visitor_source" data-view="List" data-unordered="true" data-title="Visitor Sources"></div>
+    </li>
+
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="page_visits" data-view="Numbercompare" data-title="Page Visits" data-last_title="" data-current_title=""></div>
     </li>
 
 <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">

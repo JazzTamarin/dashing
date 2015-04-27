@@ -1,6 +1,6 @@
 require_relative './GoogleAnalyticsHelper'
 
-$g = GoogleAnalyticsHelper.instance
+$g = GoogleAnalyticsHelper.new
 $current_visits = $g.get_web_visits($g.current_start_day, $g.today)
 $previous_visits = $g.get_web_visits($g.previous_start_day, $g.current_start_day)
 
