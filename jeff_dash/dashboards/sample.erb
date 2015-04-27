@@ -1,0 +1,31 @@
+<% content_for :title do %>Jeff's Dashing Board<% end %>
+<div class="gridster">
+  <ul>
+
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="current_site_visit" data-view="Number" data-min="0" data-title:"Current 30"></div>
+    </li>
+
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="previous_site_visit" data-view="Number" data-min="0" data-title: "Previous 30"></div>
+    </li>
+
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="site_difference" data-view="Text" data-title="Difference in site visits"></div>
+    </li>
+
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="visitor_source" data-view="List" data-unordered="true" data-title="Visitor Sources"></div>
+    </li>
+
+<li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="twitter_mentions" data-view="Comments" style="background-color:#ff9618;" data-moreinfo="Tweets mentioning @Procurify"></div>
+      <i class="icon-twitter icon-background"></i>
+    </li>
+
+<li data-row="1" data-col="1" data-sizex="3" data-sizey="2">
+  <div data-id="map" data-view="Map" data-title="Map" markers='{[[49.264157, -123.105387]]}'></div>
+</li>
+
+  </ul>
+</div>
