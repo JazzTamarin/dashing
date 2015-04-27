@@ -1,0 +1,14 @@
+MONTH = 60 * 60 * 24 * 30
+
+Class GoogleAnalyticsHelper
+{
+	Number current_day
+	Number current_start_day
+	Number previous_start_day
+}
+
+def set_times
+  current_day = Time.now
+  current_start_day = current_day - MONTH
+  previous_start_day = current_start_day - MONTH
+end
