@@ -1,9 +1,19 @@
+=begin
+  Author:    JazzTamarin
+  Date:      April 27, 2015
+
+    Job to control the page visits board.  Obtains data from the GoogleAnalyticsHelperClass.
+    Automatically updates the date titles on the board when the date changes
+
+=end
+
 require_relative './GoogleAnalyticsHelper'
 
 $g = GoogleAnalyticsHelper.instance
 $current_visits = $g.get_web_visits($g.current_start_day, $g.today)
 $previous_visits = $g.get_web_visits($g.previous_start_day, $g.current_start_day)
 
+#pushes date based titles to board
 def push_titles
   today = $g.today.strftime("%b%d")
   previous = $g.current_start_day.strftime("%b%d")
@@ -11,6 +21,7 @@ def push_titles
   send_event('page_visits', { current_title: previous.to_s + ' to ' + today, last_title: before.to_s + ' to ' + previous })
 end
 
+#updates stats from GoogleAnalyticsHelper
 def update_web_visits
   $current_visits = $g.get_web_visits($g.current_start_day, $g.today)
   $previous_visits = $g.get_web_visits($g.previous_start_day, $g.current_start_day)
