@@ -1,3 +1,10 @@
+# modified from Number Sample
+# Author:    JazzTamarin
+# Date:      April 27, 2015
+# 
+# Displays the last value as well as the current
+# has a title for both last and current
+
 class Dashing.Numbercompare extends Dashing.Widget
   @accessor 'current', Dashing.AnimatedValue
   @accessor 'last', Dashing.AnimatedValue
