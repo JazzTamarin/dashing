@@ -16,13 +16,15 @@ class GoogleAnalyticsHelper
 
     # construct the GoogleAnalyticsHelper
 	def initialize
+		@visitor_os = ['Linux','Android','ios','Windows']
+        @visitor_os_counts = Hash.new({ value: 0 })
 		@today = Time.now
 		@current_start_day = @today - MONTH
 		@previous_start_day = @current_start_day - MONTH
 		@sources = ['Yahoo', 'Google', 'Blog Traffic', 'Direct Traffic', 'Other'] 
 		@source_counts = Hash.new({ value: 0 })
 	end
-    attr_reader :today, :current_start_day, :previous_start_day, :source_counts
+    attr_reader :visitor_os, :visitor_os_counts, :today, :current_start_day, :previous_start_day, :source_counts
 
     # create Singleton instance
 	@@instance = GoogleAnalyticsHelper.new
@@ -55,6 +57,12 @@ class GoogleAnalyticsHelper
     # needs to be hooked in to real data
 	def update_sources
 	  @sources.each { |s| @source_counts[s] = { label: s, value: rand(100) } }   
+	end
+
+    # function to return the amount of visitor os between <start> and <finish>
+    # needs to be hooked in to real data
+	def update_visitor_os(start, finish)
+		@visitor_os.each { |v| @visitor_os_counts[v] = { label: v, value: rand(100) } }  
 	end
 
     # makes new private so Singleton is enforced
